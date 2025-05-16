@@ -1,0 +1,15 @@
+<button
+  [type]="type"
+  [disabled]="disabled"
+  (click)="onClick()"
+  [ngClass]="{
+    'bg-ds_primary-600 text-white hover:bg-ds_primary-700':
+      variant === 'primary',
+    'bg-surface text-text border border-border hover:bg-hover':
+      variant === 'secondary',
+    'opacity-50 cursor-not-allowed': disabled
+  }"
+  class="px-4 py-2 text-base rounded"
+>
+  {{ label }}
+</button>

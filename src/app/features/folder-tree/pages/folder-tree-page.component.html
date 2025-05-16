@@ -1,0 +1,16 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-50 text-base">
+  <div class="flex gap-2 flex-col w-[275px]">
+    <div class="overflow-y-auto bg-ds_surface border border-ds_border rounded">
+      <app-tree-node
+        *ngFor="let node of tree"
+        [node]="node.value"
+      ></app-tree-node>
+    </div>
+    <app-selected-nodes></app-selected-nodes>
+    <app-button
+      label="Clear selection"
+      (clicked)="clearSelection()"
+      class="ml-auto"
+    />
+  </div>
+</div>

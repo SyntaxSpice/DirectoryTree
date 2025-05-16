@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": ["jest"],
+    "module": "esnext",
+    "target": "es2015"
+  },
+  "files": ["setup-jest.ts"],
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
+}

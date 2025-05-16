@@ -1,0 +1,36 @@
+<div
+  class="cursor-pointer flex items-center gap-2 max-w-full py-1 pr-5 hover:bg-ds_hover"
+  [ngStyle]="{ 'padding-left.px': 16 * level }"
+  (click)="toggleSelection()"
+>
+  <input
+    #checkbox
+    type="checkbox"
+    class="w-[14px] h-[14px]"
+    [checked]="node.checked"
+  />
+
+  <span [title]="node.title" [class.font-semibold]="node.children">{{
+    node.title
+  }}</span>
+
+  <button
+    *ngIf="node.children"
+    (click)="toggleExpand($event)"
+    class="w-4 h-4 text-s ml-auto"
+  >
+    @if (node.expanded) {
+    <ng-icon name="heroChevronDown" class="text-text" />
+    } @else {
+    <ng-icon name="heroChevronRight" class="text-text" />
+    }
+  </button>
+</div>
+
+<div *ngIf="node.expanded">
+  <app-tree-node
+    *ngFor="let child of node.children"
+    [node]="child.value"
+    [level]="level + 1"
+  ></app-tree-node>
+</div>
