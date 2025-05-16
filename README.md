@@ -13,7 +13,7 @@ run `npm install`
 ## Run project
 
 run `npm start`
-open browser: `localhost:4200` (unless port already taken, check consose)
+open browser: `http://localhost:4200` (unless port already taken, check IDE console)
 
 ## Additional Resources
 
